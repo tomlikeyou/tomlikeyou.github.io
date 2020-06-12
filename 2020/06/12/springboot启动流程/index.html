@@ -21,10 +21,9 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="###springboot启动流程 
-
+    <meta name="description" content="springboot启动流程
 new Application执行流程
-123456789101112131415161718192021222324public SpringAppli...">
+123456789101112131415161718192021222324public SpringApplicatio...">
 
 
 
@@ -182,8 +181,7 @@ new Application执行流程
     </div>
     
     <div class="post-body post-content">
-        <p>###springboot启动流程 </p>
-<ol>
+        <h3 id="springboot启动流程"><a href="#springboot启动流程" class="headerlink" title="springboot启动流程"></a>springboot启动流程</h3><ol>
 <li><p>new Application执行流程</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SpringApplication</span><span class="params">(ResourceLoader resourceLoader, Class&lt;?&gt;... primarySources)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sources = <span class="keyword">new</span> LinkedHashSet();</span><br><span class="line">        <span class="keyword">this</span>.bannerMode = Mode.CONSOLE;</span><br><span class="line">        <span class="keyword">this</span>.logStartupInfo = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.addCommandLineProperties = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.addConversionService = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.headless = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.registerShutdownHook = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">this</span>.additionalProfiles = <span class="keyword">new</span> HashSet();</span><br><span class="line">        <span class="keyword">this</span>.isCustomEnvironment = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.lazyInitialization = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">this</span>.resourceLoader = resourceLoader;</span><br><span class="line">        Assert.notNull(primarySources, <span class="string">"PrimarySources must not be null"</span>);</span><br><span class="line">        <span class="comment">//保存主配置类</span></span><br><span class="line">        <span class="keyword">this</span>.primarySources = <span class="keyword">new</span> LinkedHashSet(Arrays.asList(primarySources));</span><br><span class="line">        <span class="comment">//判断应用是否是web应用环境</span></span><br><span class="line">        <span class="keyword">this</span>.webApplicationType = WebApplicationType.deduceFromClasspath();</span><br><span class="line">        <span class="comment">//从类路径下META-INF的spring.factoris文件里找到所有的ApplicationContextInitializer，然后保存起来</span></span><br><span class="line">        <span class="keyword">this</span>.setInitializers(<span class="keyword">this</span>.getSpringFactoriesInstances(ApplicationContextInitializer.class));</span><br><span class="line">        <span class="comment">//从类路径下的META-INF下的spring.factories下找到所有的ApplicationListener类，保存起来</span></span><br><span class="line">        <span class="keyword">this</span>.setListeners(<span class="keyword">this</span>.getSpringFactoriesInstances(ApplicationListener.class));</span><br><span class="line">        <span class="comment">//从几个配置类当中找到主配置类</span></span><br><span class="line">        <span class="keyword">this</span>.mainApplicationClass = <span class="keyword">this</span>.deduceMainApplicationClass();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -254,7 +252,7 @@ new Application执行流程
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot启动流程"><span class="toc-text">springboot启动流程</span></a></li></ol>
         
     </div>
 </aside>
